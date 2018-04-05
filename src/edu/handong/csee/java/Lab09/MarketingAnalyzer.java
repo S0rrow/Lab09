@@ -1,6 +1,10 @@
 package edu.handong.csee.java.Lab09;
 import java.util.Scanner;
-
+/**
+ * 
+ * @author s0rrow
+ *
+ */
 public class MarketingAnalyzer {
 	private double highestSales=0.0;
 	private double averageSales=0.0;

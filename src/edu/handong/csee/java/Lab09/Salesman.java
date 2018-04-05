@@ -1,5 +1,9 @@
 package edu.handong.csee.java.Lab09;
-
+/**
+ * 
+ * @author s0rrow
+ *
+ */
 public class Salesman {
 	private String mName;
 	private double mSales;
