@@ -9,6 +9,7 @@ public class MarketingAnalyzer {// This class is main class for getting data and
 	private double highestSales=0.0;// Declare local double variable for highest sales.
 	private double averageSales=0.0;// Declare local double variable for average sales.
 	private Salesman[] team;// Declare array with Salesman class type.
+	
 	public static void main(String[] args) {// This is main method for computing and printing.
 		MarketingAnalyzer Analyzer = new MarketingAnalyzer();// Initiate instance.
 		Analyzer.getData();// Use method getData from instance.
