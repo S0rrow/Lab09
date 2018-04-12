@@ -1,7 +1,7 @@
 package edu.handong.csee.java.Lab09;
 
-import java.util.ArrayList;
-import java.util.Scanner;//import scanner for input.
+import java.util.ArrayList;// Import arraylist to use.
+import java.util.Scanner;// Import scanner for input.
 /**
  * 
  * @author s0rrow
@@ -12,12 +12,16 @@ public class MarketingAnalyzer {// This class is main class for getting data and
 	private double averageSales=0.0;// Declare local double variable for average sales.
 	ArrayList<Salesman> Info = new ArrayList<Salesman>();// Declare an arraylist with type as class Salesman.
 	
-	public static void main(String[] args) {// This is main method for computing and printing.
+	public static void main(String[] args) {// This is main method.
 		MarketingAnalyzer Analyzer = new MarketingAnalyzer();// Initiate instance.
-		Analyzer.getData();// Use method getData from instance.
-		Analyzer.computeAverage();// Use method computeAverage from instance.
-		Analyzer.computeHighestSales();// Use method computeHighestSales from instance.
-		Analyzer.printResult();// Use method to print results.
+		Analyzer.act();// Run act method.
+	}
+	
+	private void act() {// This method is for running methods in class.
+		getData();// Use method getData from instance.
+		computeAverage();// Use method computeAverage from instance.
+		computeHighestSales();// Use method computeHighestSales from instance.
+		printResult();// Use method to print results.
 	}
 	
 	public void getData() {// This method is for getting data by checking whether the user will input additional data or not.
@@ -36,25 +40,25 @@ public class MarketingAnalyzer {// This class is main class for getting data and
 			System.out.println("Anymore data for salesman?:");// Check whether the user will input additional data or not.
 			keyboard.nextLine();// Delete enter left.
 			String yesno = keyboard.nextLine();// Get the next given string.
-			if(!yesno.equalsIgnoreCase("yes")) {//check whether the answer is yes or no.
+			if(!yesno.equalsIgnoreCase("yes")) {//check whether the given string is yes or no.
 				done = true;// If yes, set done to true so that the loop continues.
 			}
 		}
-		keyboard.close();// Free the memory allocated to keyboard.
+		keyboard.close();// Free the memory allocated to keyboard at the end of method.
 	}
 	
 	public void computeAverage() {// This method is for computing average of sales.
-		double sum = 0.0;// Declare and initiate a double variable.
+		double sum = 0.0;// Declare and initiate a double variable for storing sum.
 		for(int i=0;i<Info.size();i++) {// Start a loop that increases from 0 by 1 until size of arraylist
-			double sales = (Info.get(i)).getmSales();
+			double sales = (Info.get(i)).getmSales();// Declare a double variable and assign sales information of each member of arraylist to it.
 			sum = sum + sales;// Get the sales and add it to the sum.
 		}
 		this.averageSales = sum/Info.size();// Compute average and assign it to local variable averageSales.
 	}
 	
 	public void computeHighestSales() {// This method is for computing highest sales.
-		double HSales =0.0;// Declare and initiate a double variable.
-		for(int i=0;i<Info.size();i++) {// Start a loop that increases from 0 by 1 until length of array; which is number of salesman.
+		double HSales = 0.0;// Declare and initiate a double variable for storing highest sales.
+		for(int i=0;i<Info.size();i++) {// Start a loop that increases from 0 by 1 until size of arraylist.
 			if(HSales <(Info.get(i)).getmSales()) {// Set the condition, if local double variable of method is smaller than sales of current index,
 				HSales = (Info.get(i)).getmSales();// Reassign that value to local double variable.
 			}
@@ -65,7 +69,7 @@ public class MarketingAnalyzer {// This class is main class for getting data and
 	public void printResult() {// This method is for printing out the results.
 		System.out.println("Average: "+ this.averageSales);// Let the user know the average of sales.
 		System.out.println("Salesman who has the highest sales: ");// Direct user what information will come next.
-		for(int i=0;i<Info.size();i++) {//// Start a loop that increases from 0 by 1 until length of array; which is number of salesman.
+		for(int i=0;i<Info.size();i++) {//// Start a loop that increases from 0 by 1 until size of arraylist.
 			if((Info.get(i)).getmSales()==highestSales) {// Set the condition for getting which salesman has the highest sales.
 				System.out.println("Name: "+(Info.get(i)).getmName());// Print the name of salesman.
 				System.out.println("Sales: "+(Info.get(i)).getmSales());// Print the sales of salesman.
