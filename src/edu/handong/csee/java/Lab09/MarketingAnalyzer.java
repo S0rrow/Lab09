@@ -37,6 +37,7 @@ public class MarketingAnalyzer {// This class is main class for getting data and
 			team[i].setmName(name);// Assign name of salesman to array.
 			team[i].setmSales(sales);// Assign sales of salesman to array.
 		}
+		keyboard.close();
 	}
 	
 	public void computeAverage() {// This method is for computing average of sales.
